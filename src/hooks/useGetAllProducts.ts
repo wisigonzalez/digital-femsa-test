@@ -3,10 +3,9 @@ import {useEffect, useState} from 'react';
 import {ProductType} from './types';
 import {FILTERS} from '../constants';
 import getENV from '../../enviroment';
-import {ApiProvider} from '../providers/api-provider';
+import apiProvider from '../providers';
 
 const {API_URL} = getENV();
-const apiProvider = new ApiProvider();
 
 export const useGetAllProducts = (filter: string) => {
   const [data, setData] = useState<Array<ProductType>>([]);

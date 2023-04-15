@@ -13,7 +13,7 @@ const Card = ({
   const styles = CardStyles;
 
   return (
-    <View style={styles.container}>
+    <View testID="card-id" style={styles.container}>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.value}>
         {numberFormatter(value)} {unit}

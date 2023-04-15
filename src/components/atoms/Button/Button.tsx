@@ -6,6 +6,7 @@ import {ButtonStyles} from './styles';
 
 const Button = ({
   text = 'Boton',
+  testId = 'button-id',
   customStyles = {},
   handleOnPress,
 }: ButtonProps): JSX.Element => {
@@ -13,6 +14,7 @@ const Button = ({
 
   return (
     <TouchableOpacity
+      testID={testId}
       style={[styles.container, customStyles]}
       onPress={handleOnPress}>
       <Text style={[styles.text, customStyles.text]}>{text}</Text>

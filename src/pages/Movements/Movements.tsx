@@ -18,7 +18,7 @@ const Movements: FC<MovementsProps> = ({
   const styles = MovmentsStyles;
 
   return (
-    <View style={styles.container}>
+    <View testID="container-id" style={styles.container}>
       <Text style={styles.welcomeText}>Bienvenido de vuelta!</Text>
       <Text style={styles.welcomeName}>Luis González</Text>
       <Text style={styles.sectionOne}>TUS PUNTOS</Text>
@@ -32,11 +32,13 @@ const Movements: FC<MovementsProps> = ({
       {filterActive === FILTERS.all && (
         <View style={styles.buttonContainerTwo}>
           <Button
+            testId="button-winned-id"
             text="Ganados"
             customStyles={styles.customButtonStyles}
             handleOnPress={() => handleFilter(FILTERS.winned)}
           />
           <Button
+            testId="button-redeemed-id"
             text="Canjeados"
             customStyles={styles.customButtonStyles}
             handleOnPress={() => handleFilter(FILTERS.redeemed)}
@@ -46,6 +48,7 @@ const Movements: FC<MovementsProps> = ({
       {filterActive !== FILTERS.all && (
         <View style={styles.buttonContainer}>
           <Button
+            testId="button-all-id"
             text="Todos"
             handleOnPress={() => handleFilter(FILTERS.all)}
           />

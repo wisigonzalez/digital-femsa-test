@@ -1,19 +1,17 @@
 import React, {FC} from 'react';
 import {View, Text, Image} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 
 import {MovementProps} from './types';
 import {MovmentsDetailsStyles} from './styles';
 import {Button} from '../../components/atoms/Button/Button';
 import {dateFormmatter, numberFormatter} from '../../utils/formatter';
 
-const MovementsDetails: FC<MovementProps> = ({movement}) => {
-  const navigation = useNavigation();
+const MovementsDetails: FC<MovementProps> = ({navigation, movement}) => {
   const styles = MovmentsDetailsStyles;
   const {product, image, createdAt, points} = movement;
 
   return (
-    <View style={styles.container}>
+    <View testID="container-id" style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.product}>{product}</Text>
       </View>
