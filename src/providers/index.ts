@@ -1,10 +1,10 @@
 import axios, {AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios';
 
-export interface ApiProviderResponse<T = any> extends AxiosResponse {
+interface ApiProviderResponse<T = any> extends AxiosResponse {
   data: T;
 }
 
-export class ApiProvider {
+class ApiProvider {
   protected instance: AxiosInstance;
   static instance: AxiosInstance;
 
@@ -51,3 +51,7 @@ export class ApiProvider {
     return this.instance.patch(url, data);
   }
 }
+
+const apiProvider = new ApiProvider();
+
+export default apiProvider;

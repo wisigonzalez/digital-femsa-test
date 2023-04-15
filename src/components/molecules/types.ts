@@ -1,6 +1,5 @@
-export interface MovementProps {
-  navigation: any;
-  movement: {
+export interface ListItemProps {
+  item: {
     id: string;
     image: string;
     points: number;
@@ -8,4 +7,5 @@ export interface MovementProps {
     createdAt: string;
     is_redemption: boolean;
   };
+  handleOnPress: () => void;
 }
