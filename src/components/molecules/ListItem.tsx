@@ -5,8 +5,8 @@ import {ListItemStyles} from './styles';
 import {numberFormatter, dateFormmatter} from '../../utils/formatter';
 
 export const ListItem = ({
-  title,
   date,
+  title,
   points,
   imageUrl,
   isRedemption,

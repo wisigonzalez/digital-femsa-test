@@ -1,11 +1,23 @@
 export interface MovementsProps {
+  navigation: any;
+  filterActive: string;
   movements?: Array<{
     id: string;
-    product: string;
     image: string;
-    is_redemption: boolean;
     points: number;
+    product: string;
     createdAt: string;
+    is_redemption: boolean;
   }>;
   totalPoints?: number;
+  handleFilter: (value: string) => void;
 }
+
+export type ProductsType = {
+  id: string;
+  image: string;
+  points: number;
+  product: string;
+  createdAt: string;
+  is_redemption: boolean;
+};
