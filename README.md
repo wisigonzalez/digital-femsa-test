@@ -21,6 +21,7 @@
 - Singleton pattern
 - Custom hooks
 - Unit testing
+- Gitflow
 - Custom labels in repository
 - Follow guidelines
 
