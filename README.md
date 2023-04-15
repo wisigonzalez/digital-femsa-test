@@ -42,6 +42,10 @@ If you wish run the test, then:
 
 1. npm run test
 
+If you wish run the test with coverage, then:
+
+1. npm run test:coverage
+
 ## Folder structure
 Explanation of hierarchies in files and layers.
 
@@ -66,8 +70,15 @@ Explanation of hierarchies in files and layers.
 
 ## Other details
 
-- N/A
-
+- Layaouts
+  - MOVEMENTS
+    - https://drive.google.com/file/d/1sqhdgSYQrdcQurhcSXK1Q9wS1h0YX025/view?usp=share_link
+    - https://drive.google.com/file/d/16uHkyYuBBhyEdBynfWPsryoxHpKrU5Vr/view?usp=share_link
+    - https://drive.google.com/file/d/16uHkyYuBBhyEdBynfWPsryoxHpKrU5Vr/view?usp=share_link
+  - MOVEMENTS DETAILS
+    - https://drive.google.com/file/d/1WurDDQd_m1pTfNaPiNEYjaM0ZOXRklPL/view?usp=share_link
+  - VIDEO
+    - https://drive.google.com/file/d/1zLamJxFZkwAp77VKE5SPSbrMMV1LfM5p/view?usp=share_link
 # License
 
 MIT
