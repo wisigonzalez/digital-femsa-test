@@ -1,46 +1,48 @@
 import {StyleSheet} from 'react-native';
 
+import {resPixel, resText} from '../../utils/responsive';
+
 export const ListItemStyles = StyleSheet.create({
   container: {
-    paddingBottom: 15,
     flexDirection: 'row',
     alignItems: 'center',
+    paddingBottom: resPixel(15),
   },
   image: {
-    width: 55,
-    height: 55,
     borderRadius: 10,
-    marginRight: 10,
+    width: resPixel(55),
+    height: resPixel(55),
+    marginRight: resPixel(10),
   },
   leftContentSide: {
-    flexDirection: 'row',
     flex: 1,
+    flexDirection: 'row',
   },
   rightContentSide: {
-    marginTop: -4,
+    marginTop: resPixel(-4),
   },
   title: {
-    fontFamily: 'Avenir',
+    fontWeight: '900',
     fontStyle: 'normal',
-    fontWeight: '800',
-    fontSize: 14,
-    lineHeight: 19,
+    fontFamily: 'Avenir',
+    fontSize: resText(12),
+    lineHeight: resText(19),
   },
   date: {
-    marginTop: 16,
-    fontFamily: 'Avenir',
-    fontStyle: 'normal',
     fontWeight: '400',
-    fontSize: 12,
-    lineHeight: 16,
+    fontStyle: 'normal',
+    fontFamily: 'Avenir',
+    fontSize: resText(10),
+    marginTop: resPixel(10),
+    lineHeight: resText(16),
   },
   points: {
-    marginTop: 10,
-    fontFamily: 'Avenir',
+    fontWeight: '900',
     fontStyle: 'normal',
-    fontWeight: '800',
-    fontSize: 14,
-    lineHeight: 19,
+    fontFamily: 'Avenir',
+    fontSize: resText(12),
+    marginTop: resPixel(14),
+    lineHeight: resText(19),
   },
   positive: {
     color: '#00B833',
@@ -49,12 +51,12 @@ export const ListItemStyles = StyleSheet.create({
     color: '#FF0000',
   },
   arrow: {
-    marginLeft: 20,
-    marginTop: 8,
-    fontFamily: 'Avenir',
+    fontWeight: '900',
     fontStyle: 'normal',
-    fontWeight: '800',
-    fontSize: 16,
-    lineHeight: 19,
+    fontFamily: 'Avenir',
+    fontSize: resText(14),
+    marginTop: resPixel(10),
+    lineHeight: resText(19),
+    marginLeft: resPixel(20),
   },
 });

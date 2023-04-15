@@ -1,10 +1,9 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-import {CardStyles} from './styles';
-
-import {numberFormatter} from '../../../utils/formatter';
 import {CardProps} from './types';
+import {CardStyles} from './styles';
+import {numberFormatter} from '../../../utils/formatter';
 
 const Card = ({
   title = '',

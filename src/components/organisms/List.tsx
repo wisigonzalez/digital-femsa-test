@@ -3,9 +3,11 @@ import {FlatList, View} from 'react-native';
 
 import {ListStyles} from './styles';
 import {ListItem} from '../molecules/ListItem';
+import {ROUTES} from '../../navigators/routes';
 
-const List = ({data = []}: any): JSX.Element => {
+const List = ({navigation, data = []}: any): JSX.Element => {
   const styles = ListStyles;
+
   const renderItem = ({item}: any): JSX.Element => {
     const {product, createdAt, points, is_redemption, image} = item;
 
@@ -16,6 +18,11 @@ const List = ({data = []}: any): JSX.Element => {
         points={points}
         imageUrl={image}
         isRedemption={is_redemption}
+        handleOnPress={() =>
+          navigation.navigate(ROUTES.MOVEMENTS_DETAILS, {
+            movement: item,
+          })
+        }
       />
     );
   };
@@ -24,6 +31,9 @@ const List = ({data = []}: any): JSX.Element => {
     <View style={styles.container}>
       <FlatList
         data={data}
+        windowSize={5}
+        initialNumToRender={2}
+        maxToRenderPerBatch={2}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item): string => item.id}
