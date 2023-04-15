@@ -1,4 +1,5 @@
 export interface ButtonProps {
   text: string;
-  handleOnPress: () => void;
+  customStyles?: any;
+  handleOnPress: any;
 }

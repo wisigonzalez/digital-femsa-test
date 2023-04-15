@@ -1,48 +1,67 @@
 import {StyleSheet} from 'react-native';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+
+import {resPixel, resText} from '../../utils/responsive';
 
 export const MovmentsStyles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingLeft: resPixel(20),
+    paddingRight: resPixel(20),
+    paddingBottom: resPixel(20),
+    backgroundColor: Colors.white,
   },
   welcomeText: {
-    fontFamily: 'Avenir',
+    fontWeight: '900',
     fontStyle: 'normal',
-    fontWeight: '800',
-    fontSize: 20,
-    lineHeight: 27,
+    fontFamily: 'Avenir',
+    fontSize: resText(18),
+    lineHeight: resText(27),
   },
   welcomeName: {
-    fontFamily: 'Avenir',
     fontStyle: 'normal',
-    fontSize: 16,
-    lineHeight: 27,
+    fontFamily: 'Avenir',
+    fontSize: resText(14),
+    marginTop: resPixel(-8),
+    lineHeight: resText(27),
   },
   sectionOne: {
-    marginTop: 20,
-    fontFamily: 'Avenir',
-    fontStyle: 'normal',
-    fontWeight: '800',
-    fontSize: 14,
-    lineHeight: 19,
     color: '#9B9898',
+    fontWeight: '900',
+    fontStyle: 'normal',
+    fontFamily: 'Avenir',
+    fontSize: resText(12),
+    marginTop: resPixel(10),
+    lineHeight: resText(19),
   },
   cardContainer: {
-    marginTop: 20,
+    marginTop: resPixel(20),
   },
   sectionTwo: {
-    marginTop: 20,
-    fontFamily: 'Avenir',
-    fontStyle: 'normal',
-    fontWeight: '800',
-    fontSize: 14,
-    lineHeight: 19,
     color: '#9B9898',
+    fontWeight: '900',
+    fontStyle: 'normal',
+    fontFamily: 'Avenir',
+    fontSize: resText(12),
+    marginTop: resPixel(16),
+    lineHeight: resText(19),
   },
   listContainer: {
-    marginTop: 20,
+    flex: 1,
+    marginTop: resPixel(24),
   },
   buttonContainer: {
-    marginTop: 43,
+    position: 'relative',
     justifyContent: 'flex-end',
+  },
+  buttonContainerTwo: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  customButtonStyles: {
+    width: resPixel(170),
+    text: {
+      fontSize: resPixel(12),
+    },
   },
 });

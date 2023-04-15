@@ -3,13 +3,19 @@ import {View, Text} from 'react-native';
 
 import {MovementsProps} from './types';
 import {MovmentsStyles} from './styles';
+import {FILTERS} from '../../constants';
+import {List} from '../../components/organisms/List';
 import {Card} from '../../components/atoms/Card/Card';
 import {Button} from '../../components/atoms/Button/Button';
-import {List} from '../../components/organisms/List';
 
-const Movements: FC<MovementsProps> = ({movements = [], totalPoints = 0}) => {
+const Movements: FC<MovementsProps> = ({
+  navigation,
+  filterActive,
+  movements = [],
+  totalPoints = 0,
+  handleFilter,
+}) => {
   const styles = MovmentsStyles;
-  console.log(movements);
 
   return (
     <View style={styles.container}>
@@ -21,16 +27,30 @@ const Movements: FC<MovementsProps> = ({movements = [], totalPoints = 0}) => {
       </View>
       <Text style={styles.sectionTwo}>TUS MOVIMIENTOS</Text>
       <View style={styles.listContainer}>
-        <List data={movements} />
+        <List navigation={navigation} data={movements} />
       </View>
-      <View style={styles.buttonContainer}>
-        <Button
-          text="Todos"
-          handleOnPress={() => {
-            console.log('*** PRESS ***');
-          }}
-        />
-      </View>
+      {filterActive === FILTERS.all && (
+        <View style={styles.buttonContainerTwo}>
+          <Button
+            text="Ganados"
+            customStyles={styles.customButtonStyles}
+            handleOnPress={() => handleFilter(FILTERS.winned)}
+          />
+          <Button
+            text="Canjeados"
+            customStyles={styles.customButtonStyles}
+            handleOnPress={() => handleFilter(FILTERS.redeemed)}
+          />
+        </View>
+      )}
+      {filterActive !== FILTERS.all && (
+        <View style={styles.buttonContainer}>
+          <Button
+            text="Todos"
+            handleOnPress={() => handleFilter(FILTERS.all)}
+          />
+        </View>
+      )}
     </View>
   );
 };

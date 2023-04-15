@@ -4,8 +4,8 @@ const windowDimensions = Dimensions.get('window');
 
 const {height: windowScreenHeight, width: windowScreenWidth} = windowDimensions;
 
-const referenceWidth = 375;
-const referenceHeight = 667;
+const referenceWidth = 393;
+const referenceHeight = 852;
 
 const useWidth =
   windowScreenWidth / referenceWidth < windowScreenHeight / referenceHeight;
