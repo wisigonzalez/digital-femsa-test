@@ -1,8 +1,12 @@
 # Digital femsa test
 
-- Figma >>> https://www.figma.com/file/AIMJp1Y6Gfv9PmQ8lYmUy8/Code-challenge?node-id=0-1&t=u2qdFf8KpfZ0VwrX-0
-- Prototype figma >>> https://www.figma.com/proto/AIMJp1Y6Gfv9PmQ8lYmUy8/Code-challenge?node-id=6-649&scaling=scale-down&page-id=0%3A1&starting-point-node-id=6%3A649
-- Mock API >>> https://6222994f666291106a29f999.mockapi.io/api/v1/products
+- Figma
+  - https://www.figma.com/file/AIMJp1Y6Gfv9PmQ8lYmUy8/Code-challenge?node-id=0-1&t=u2qdFf8KpfZ0VwrX-0
+- Prototype figma
+  - https://www.figma.com/proto/AIMJp1Y6Gfv9PmQ8lYmUy8/Code-challenge?node-id=6-649&scaling=scale-down&page-id=0%3A1&starting-point-node-id=6%3A649
+- Mock API
+  - https://6222994f666291106a29f999.mockapi.io/api/v1/products
+  
 ## Stack
 
 - Frontend
