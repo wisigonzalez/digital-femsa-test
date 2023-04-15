@@ -1,67 +1,55 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 
+import {ProductsType} from './types';
 import {Movements} from './Movements';
+import {FILTERS} from '../../constants';
+import {useGetAllProducts} from '../../hooks/useGetAllProducts';
+import {useGetAllFilteredProducts} from '../../hooks/useGetAllFilteredProducts';
 
 const MovementsLoad = () => {
-  const movements = [
-    {
-      createdAt: '2022-12-09T06:34:25.607Z',
-      product: 'Handmade Metal Shoes',
-      points: 16434,
-      image: 'https://loremflickr.com/640/480/transport',
-      is_redemption: false,
-      id: '1',
-    },
-    {
-      createdAt: '2022-12-09T17:02:51.904Z',
-      product: 'Recycled Plastic Tuna',
-      points: 92984,
-      image: 'https://loremflickr.com/640/480/technics',
-      is_redemption: false,
-      id: '2',
-    },
-    {
-      createdAt: '2022-12-09T06:34:25.607Z',
-      product: 'Handmade Metal Shoes',
-      points: 16434,
-      image: 'https://loremflickr.com/640/480/transport',
-      is_redemption: false,
-      id: '3',
-    },
-    {
-      createdAt: '2022-12-09T17:02:51.904Z',
-      product: 'Recycled Plastic Tuna',
-      points: 92984,
-      image: 'https://loremflickr.com/640/480/technics',
-      is_redemption: false,
-      id: '4',
-    },
-    {
-      createdAt: '2022-12-09T06:34:25.607Z',
-      product: 'Handmade Metal Shoes',
-      points: 16434,
-      image: 'https://loremflickr.com/640/480/transport',
-      is_redemption: false,
-      id: '5',
-    },
-    {
-      createdAt: '2022-12-09T17:02:51.904Z',
-      product: 'Recycled Plastic Tuna',
-      points: 92984,
-      image: 'https://loremflickr.com/640/480/technics',
-      is_redemption: false,
-      id: '6',
-    },
-  ];
+  const navigation = useNavigation();
+  const [filter, setFilter] = useState<string>(FILTERS.all);
+  const [products, setProducts] = useState<Array<ProductsType>>([]);
 
-  const totalPoints = movements.reduce((accumulator, movement) => {
-    if (!movement.is_redemption) {
-      return accumulator + movement.points;
+  const {data: allProducts} = useGetAllProducts(filter);
+  const {data: allFilteredProducts} = useGetAllFilteredProducts(filter);
+
+  const handleOnPressFilter = (value: string) => {
+    setFilter(value);
+  };
+
+  useEffect(() => {
+    if (filter === FILTERS.all) {
+      setProducts(allProducts);
     }
-    return accumulator;
+  }, [allProducts, filter]);
+
+  useEffect(() => {
+    if (filter !== FILTERS.all) {
+      setProducts(allFilteredProducts);
+    }
+  }, [allFilteredProducts, filter]);
+
+  const totalPoints = products.reduce((acc, item) => acc + item.points, 0);
+  const toltalRedeemPoints = products.reduce((acc, item) => {
+    if (item.is_redemption) {
+      return acc + item.points;
+    }
+    return acc;
   }, 0);
 
-  return <Movements movements={movements} totalPoints={totalPoints} />;
+  const points = totalPoints - toltalRedeemPoints;
+
+  return (
+    <Movements
+      navigation={navigation}
+      movements={products}
+      totalPoints={points}
+      filterActive={filter}
+      handleFilter={handleOnPressFilter}
+    />
+  );
 };
 
 export {MovementsLoad};
